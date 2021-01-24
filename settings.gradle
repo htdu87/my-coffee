@@ -1,0 +1,2 @@
+include ':my-coffee'
+rootProject.name = "MyCoffee"

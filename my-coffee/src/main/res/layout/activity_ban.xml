@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BanActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_ma"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/lay_ten"
+        app:layout_constraintHorizontal_weight="0.4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_ma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mã bàn"
+            android:inputType="textCapCharacters"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_ten"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/lay_ma"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_weight="0.6">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_ten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên bàn"
+            android:inputType="textCapSentences"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_luu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lưu"
+        android:onClick="onSave"
+        android:layout_margin="4dp"
+        android:theme="@style/ButtonGreen"
+        app:layout_constraintTop_toBottomOf="@id/lay_ma"
+        app:layout_constraintRight_toLeftOf="@id/btn_huy"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:id="@+id/btn_huy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hủy"
+        android:onClick="onCancel"
+        android:layout_margin="4dp"
+        android:theme="@style/ButtonRed"
+        app:layout_constraintTop_toBottomOf="@id/lay_ma"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btn_luu"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_luu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

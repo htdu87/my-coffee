@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/lbl_ten_mon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/lay_button"
+        app:layout_constraintBottom_toTopOf="@id/lbl_so_luong"/>
+
+    <TextView
+        android:id="@+id/lbl_so_luong"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/lbl_ten_mon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/lay_button" />
+
+    <LinearLayout
+        android:id="@+id/lay_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_add"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:theme="@style/ButtonGreen"
+            android:src="@drawable/ic_baseline_add_24"/>
+
+        <ImageButton
+            android:id="@+id/btn_rem"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:theme="@style/ButtonRed"
+            android:src="@drawable/ic_baseline_remove_24"/>
+
+        <ImageButton
+            android:id="@+id/btn_del"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:theme="@style/ButtonYellow"
+            android:src="@drawable/ic_baseline_clear_24"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
