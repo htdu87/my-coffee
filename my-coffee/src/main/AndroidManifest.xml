@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MonActivity"
-            android:label="Danh sách món"/>
+        <activity android:name=".activity.StatisticActivity"
+            android:label="Thống kê doanh thu"/>
+        <activity
+            android:name=".activity.MonActivity"
+            android:label="Danh sách món" />
         <activity
             android:name=".activity.BanActivity"
             android:label="Danh sách bàn" />

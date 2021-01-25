@@ -13,6 +13,7 @@ import java.util.List;
 
 import vn.edu.ctu.cit.mycoffee.model.Ban;
 import vn.edu.ctu.cit.mycoffee.model.CtHoaDon;
+import vn.edu.ctu.cit.mycoffee.model.CtHoaDonFull;
 import vn.edu.ctu.cit.mycoffee.model.HoaDon;
 import vn.edu.ctu.cit.mycoffee.model.Mon;
 
@@ -89,6 +90,33 @@ public class LocalDatabase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public List<CtHoaDonFull> thongKe(long from, long to) {
+        List<CtHoaDonFull> ctHoaDons=new ArrayList<>();
+        SQLiteDatabase reader=getReadableDatabase();
+        Cursor cursor=reader.rawQuery("select a.*,c.*,b.ngayxuat from CT_HOA_DON a,HOA_DON b,MON c where a.idhd=b.idhd and a.idmon=c.idmon and b.ngayxuat>=? and b.ngayxuat<=? order by b.ngayxuat asc",
+                new String[]{String.valueOf(from),String.valueOf(to)});
+        if (cursor.moveToNext()) {
+            do {
+                CtHoaDonFull ct=new CtHoaDonFull();
+                ct.setIdChiTiet(cursor.getLong(0));
+                ct.setIdBan(cursor.getLong(1));
+                ct.setIdMon(cursor.getLong(2));
+                ct.setIdHoaDon(cursor.getLong(3));
+                ct.setSoLuong(cursor.getInt(4));
+                ct.setDonGia(cursor.getDouble(5));
+                ct.setMaMon(cursor.getString(7));
+                ct.setTenMon(cursor.getString(8));
+                ct.setDvt(cursor.getString(9));
+                ct.setNgayBan(cursor.getLong(11));
+
+                ctHoaDons.add(ct);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        reader.close();
+        return ctHoaDons;
     }
 
     public List<Mon> layDsMon() {

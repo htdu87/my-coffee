@@ -59,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId()==R.id.act_list) {
             startActivity(new Intent(this,BanActivity.class));
             return true;
+        } else if(item.getItemId()==R.id.act_statistic) {
+            startActivity(new Intent(this,StatisticActivity.class));
+            return true;
         } else {
             return super.onOptionsItemSelected(item);
         }

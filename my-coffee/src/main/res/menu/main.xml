@@ -7,4 +7,9 @@
         android:icon="@drawable/ic_baseline_list_alt_24"
         android:title="Danh sách bàn"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/act_statistic"
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title="Thống kê"
+        app:showAsAction="ifRoom" />
 </menu>
